@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+  scrollbar-width: none;
 }
 
 body {
@@ -13,6 +14,12 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+
+:root {
+  --navBGC: rgba(0,0,0,.85);
+  --svgSize: 1.55rem;
+}
+
 `;
 
 export default GlobalStyle;
