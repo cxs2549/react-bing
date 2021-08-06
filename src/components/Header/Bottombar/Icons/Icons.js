@@ -30,7 +30,7 @@ const StyledIcons = styled.div`
       color: inherit;
     }
     .active {
-      color: lightblue;
+      color: #8ABAE6;
     }
   }
 `;
