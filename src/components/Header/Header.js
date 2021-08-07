@@ -5,6 +5,7 @@ const StyledHeader = styled.header`
   height: 60px;
   color: white;
   position: fixed;
+  z-index: 10;
   img {
     max-width: 24px;
   }

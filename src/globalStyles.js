@@ -14,6 +14,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	overflow-y: hidden;
+	height: 100vh;
 }
 
 :root {

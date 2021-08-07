@@ -11,6 +11,7 @@ const StyledHome = styled.div`
 `
 
 const Home = () => {
+  
   return (
     <StyledHome>
       <Inner />

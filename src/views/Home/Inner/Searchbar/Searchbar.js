@@ -4,6 +4,7 @@ import { RiPhoneCameraLine } from "react-icons/ri";
 import { BiMicrophone } from "react-icons/bi";
 const StyledSearchbar = styled.div`
   color: white;
+  padding: 0 1rem;
   #weather {
     padding-left: 0.75rem;
     display: flex;
@@ -11,7 +12,7 @@ const StyledSearchbar = styled.div`
     gap: 0.5rem;
     svg {
       color: orange;
-      font-size: 1.9rem;
+      font-size: 1.5rem;
     }
     #temp {
       background-color: #cdcdcd50;
@@ -22,10 +23,13 @@ const StyledSearchbar = styled.div`
       border-radius: 99999px;
       font-size: 1.2rem;
       box-shadow: var(--boxShadow);
+      display: flex;
+      align-items: center; 
+      gap: .5rem;
     }
   }
   #searchbar {
-    margin-top: 0.75rem;
+    margin-top: 0.5rem;
     position: relative;
     box-shadow: var(--boxShadow);
     border-radius: 99999px;
@@ -58,9 +62,9 @@ const Searchbar = () => {
   return (
     <StyledSearchbar>
       <div id="weather">
-        <GiStripedSun />
         <div id="temp">
-          <span>76&deg;F</span>
+        <GiStripedSun />
+          <span>77&deg;F</span>
         </div>
       </div>
       <div id="searchbar">
