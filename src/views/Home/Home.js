@@ -7,6 +7,7 @@ const StyledHome = styled.div`
   background-position: center center;
   background-size: cover;
   max-height: 100vh;
+  /* position: relative; */
   overflow-y: hidden;
 `
 

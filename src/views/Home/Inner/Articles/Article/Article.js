@@ -7,31 +7,35 @@ import { AiOutlineEllipsis } from 'react-icons/ai'
 const StyledArticle = styled.div`
 	width: 100%;
 	min-height: 390px;
-	background-image: ${(props) => (props.split ? 'initial' : `url(${props.image})`)};
+	/* background-image: ${(props) => (props.split ? 'initial' : `url(${props.image})`)}; */
 	background-size: cover;
 	background-position: center center;
 	border-radius: 8px;
 	overflow: hidden;
 	margin-bottom: 1rem;
 	position: relative;
-	background-color: #fff;
+	background-color: transparent;
 	img {
 		width: 100%;
-		height: 85%;
+		height: 80%;
 		object-fit: cover;
 		object-position: top center;
 	}
 	#text {
-		position: absolute;
+		/* display: none; */
 		/* background-color: rgba(255, 255, 255, 0.6); */
-		background-image: linear-gradient(to bottom, transparent 1%, #1b181a 54%);
-		left: 0;
+		background-image: linear-gradient(to bottom, transparent 1%, #1b181a 24%);
+		
+		position: relative;
+		position: absolute;
+		height: min-content;
 		bottom: 0;
-		height: auto;
+		left: 0;
 		width: 100%;
-		padding: 1rem;
-		padding-top: 6.5rem;
+		padding: 1rem 1rem;
+		/* padding-bottom: 0; */
 		color: white;
+		border-radius: 8px;
 		#source {
 			margin-bottom: .75rem;
 			span {
@@ -43,6 +47,7 @@ const StyledArticle = styled.div`
 			font-size: 115%;
 		}
 		#icons {
+			
 			margin-top: .75rem;
 			display: flex;
 			align-items: center;

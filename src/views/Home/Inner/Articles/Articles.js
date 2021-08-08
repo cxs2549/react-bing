@@ -3,6 +3,7 @@ import Article from './Article/Article'
 import article1 from '../../../../assets/articles/article-1.jpg'
 import article2 from '../../../../assets/articles/article-2.jpg'
 import article3 from '../../../../assets/articles/article-3.jpg'
+import article4 from '../../../../assets/articles/article-4.png'
 
 const StyledArticles = styled.div`
 	margin-top: 1.5rem;
@@ -45,13 +46,22 @@ const Articles = () => {
 			likes: 1,
 			comments: null
 		},
+		{
+			image: article4,
+			split: true,
+			title: "Rudy Giuliani is being investigated by the FBI over a film he was trying to make about the Bidens and...",
+			source: 'Business Insider',
+			sourceIcon: '',
+			publishedAt: '54 mins',
+			likes: 67,
+			comments: 20
+		},
 	]
 	return (
 		<StyledArticles>
-			<Article article={articles[0]} />
-			<Article article={articles[1]} />
-			<Article article={articles[2]} />
-			<Article article={articles[2]} />
+			{articles.map((article, i) => (
+				<Article article={article} key={i} />
+			))}
 		</StyledArticles>
 	)
 }

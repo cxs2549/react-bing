@@ -6,10 +6,9 @@ import Searchbar from './Searchbar/Searchbar'
 const StyledInner = styled.div`
 	overflow-y: scroll;
 	height: 100vh;
-	padding: 4.25rem 0;
+	padding: 1rem 0;
 	padding-right: 0;
-	margin-bottom: 120px;
-
+	background-color: transparent;
 `
 
 const Inner = () => {

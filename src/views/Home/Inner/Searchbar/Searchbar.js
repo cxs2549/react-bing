@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { GiStripedSun } from "react-icons/gi";
 import { RiPhoneCameraLine } from "react-icons/ri";
 import { BiMicrophone } from "react-icons/bi";
+import { useEffect, useRef, useState } from "react";
+import Topbar from "../../../../components/Header/Topbar/Topbar";
 const StyledSearchbar = styled.div`
   color: white;
   padding: 0 1rem;
@@ -58,9 +60,30 @@ const StyledSearchbar = styled.div`
   }
 `;
 
+const useOnScreen = (ref) => {
+
+  const [isIntersecting, setIntersecting] = useState(false)
+
+  const observer = new IntersectionObserver(
+    ([entry]) => setIntersecting(entry.isIntersecting)
+  )
+
+  useEffect(() => {
+    observer.observe(ref.current)
+    // Remove the observer as soon as the component is unmounted
+    return () => { observer.disconnect() }
+  })
+
+  return isIntersecting
+}
+
+
 const Searchbar = () => {
+
+  const ref = useRef()
+  const isVisible = useOnScreen(ref)
   return (
-    <StyledSearchbar>
+    <StyledSearchbar ref={ref}>
       <div id="weather">
         <div id="temp">
         <GiStripedSun />
@@ -72,6 +95,7 @@ const Searchbar = () => {
         <RiPhoneCameraLine />
         <BiMicrophone />
       </div>
+      {!isVisible && <Topbar />}
     </StyledSearchbar>
   );
 };
