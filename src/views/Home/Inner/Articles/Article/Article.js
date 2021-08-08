@@ -6,8 +6,7 @@ import { AiOutlineEllipsis } from 'react-icons/ai'
 
 const StyledArticle = styled.div`
 	width: 100%;
-	min-height: 390px;
-	/* background-image: ${(props) => (props.split ? 'initial' : `url(${props.image})`)}; */
+	/* min-height: 350px; */
 	background-size: cover;
 	background-position: center center;
 	border-radius: 8px;
@@ -15,40 +14,63 @@ const StyledArticle = styled.div`
 	margin-bottom: 1rem;
 	position: relative;
 	background-color: transparent;
-	img {
+	/* border: 2px solid white; */
+	#image {
 		width: 100%;
-		height: 80%;
+		min-height: 250px;
+		max-height: 250px;
 		object-fit: cover;
 		object-position: top center;
 	}
 	#text {
 		/* display: none; */
-		/* background-color: rgba(255, 255, 255, 0.6); */
-		background-image: linear-gradient(to bottom, transparent 1%, #1b181a 24%);
-		
-		position: relative;
-		position: absolute;
-		height: min-content;
+		/* position: absolute; */
+		height: 100px;
 		bottom: 0;
 		left: 0;
 		width: 100%;
-		padding: 1rem 1rem;
-		/* padding-bottom: 0; */
+		padding: 0 1rem;
 		color: white;
 		border-radius: 8px;
+		position: relative;
+		/* border: 2px solid white; */
+		#innerText {
+			background-image: linear-gradient(to bottom, transparent 0%, #1b181a 34%);
+			/* border: 2px solid white; */
+			padding: 1rem;
+			padding-right: .5rem;
+			/* padding-top: 0; */
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+		}
 		#source {
-			margin-bottom: .75rem;
+			margin-bottom: .7rem;
+			display: flex;
+			align-content: center;
+			/* border: 2px solid white; */
+			img {
+				max-width: 20px;
+				max-height: 20px;
+				margin-right: .5rem;
+				border-radius: 3px;
+			}
 			span {
 				font-size: 80%;
 				margin-right: .5rem;
+				&:first-of-type::after {
+					content: '•';
+					padding-left: .5rem;
+					opacity: .7;
+				}
 			}
 		}
 		h1 {
 			font-size: 115%;
 		}
 		#icons {
-			
-			margin-top: .75rem;
+			margin-top: .5rem;
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
@@ -71,7 +93,7 @@ const StyledArticle = styled.div`
 					margin-right: .5rem;
 					display: flex;
 					align-items: center;
-					background-color: #cdcdcd50;
+					background-color: rgba(0, 0, 0, 0.7);
 					border-radius: 99999px;
 				}
 			}
@@ -79,7 +101,7 @@ const StyledArticle = styled.div`
 				padding: 6px 6px;
 				display: flex;
 				align-items: center;
-				background-color: #cdcdcd50;
+				background-color: rgba(0, 0, 0, 0.7);
 				border-radius: 99999px;
 			}
 		}
@@ -89,33 +111,36 @@ const StyledArticle = styled.div`
 const Article = ({ article }) => {
 	return (
 		<StyledArticle image={article.image} split={article.split}>
-			{article.split && <img src={article.image} alt="" />}
+			{article.split && <img id="image" src={article.image} alt="" />}
 			{article.split && (
 				<div id="text">
-					<div id="source">
-						<span>{article.source}</span>
-						<span>{article.publishedAt}</span>
-					</div>
-					<h1>{article.title}</h1>
-					<div id="icons">
-						<div id="trio">
-							<div id="like">
-								<HiOutlineThumbUp />
-								<span>Like</span>
-							</div>
-							<div>
-								<RiHandHeartLine />
-								<span>{article.likes}</span>
-							</div>
-							{article.comments && (
-								<div>
-									<BiComment />
-									<span>{article.comments}</span>
-								</div>
-							)}
+					<div id="innerText">
+						<div id="source">
+							{article.sourceIcon && <img src={article.sourceIcon} alt="" />}
+							<span>{article.source}</span>
+							<span>{article.publishedAt}</span>
 						</div>
-						<div id="ellipsis">
-							<AiOutlineEllipsis />
+						<h1>{article.title}</h1>
+						<div id="icons">
+							<div id="trio">
+								<div id="like">
+									<HiOutlineThumbUp />
+									<span>Like</span>
+								</div>
+								<div>
+									<RiHandHeartLine />
+									<span>{article.likes}</span>
+								</div>
+								{article.comments && (
+									<div>
+										<BiComment />
+										<span>{article.comments}</span>
+									</div>
+								)}
+							</div>
+							<div id="ellipsis">
+								<AiOutlineEllipsis />
+							</div>
 						</div>
 					</div>
 				</div>

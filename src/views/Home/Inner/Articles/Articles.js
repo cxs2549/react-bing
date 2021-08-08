@@ -4,6 +4,7 @@ import article1 from '../../../../assets/articles/article-1.jpg'
 import article2 from '../../../../assets/articles/article-2.jpg'
 import article3 from '../../../../assets/articles/article-3.jpg'
 import article4 from '../../../../assets/articles/article-4.png'
+import bi from '../../../../assets/articles/bi.png'
 
 const StyledArticles = styled.div`
 	margin-top: 1.5rem;
@@ -21,7 +22,7 @@ const Articles = () => {
 			split: true,
 			title: 'Simone Biles Reunites with Boyfriend Jonathan Owens in Texas as She Supports Him at NF...',
 			source: 'People',
-			sourceIcon: '',
+			sourceIcon: bi,
 			publishedAt: '8 hours',
 			likes: 366,
 			comments: 55
@@ -31,7 +32,7 @@ const Articles = () => {
 			split: true,
 			title: "Israeli ambassador: Israel wants Iranian government 'overthrown'",
 			source: 'Washington Examiner',
-			sourceIcon: '',
+			sourceIcon: bi,
 			publishedAt: '1 hour',
 			likes: 31,
 			comments: 14
@@ -41,7 +42,7 @@ const Articles = () => {
 			split: true,
 			title: "Arrest Made in Murder of Banking Exec in Reseda",
 			source: 'NBC Los Angeles',
-			sourceIcon: '',
+			sourceIcon: bi,
 			publishedAt: '3 hours',
 			likes: 1,
 			comments: null
@@ -51,7 +52,7 @@ const Articles = () => {
 			split: true,
 			title: "Rudy Giuliani is being investigated by the FBI over a film he was trying to make about the Bidens and...",
 			source: 'Business Insider',
-			sourceIcon: '',
+			sourceIcon: bi,
 			publishedAt: '54 mins',
 			likes: 67,
 			comments: 20

@@ -4,22 +4,23 @@ const StyledIcon = styled.div`
     display: flex;
     flex-flow: column;
     align-items: center;
+    justify-content: center;
     gap: .3rem;
     color: white;
-    margin-right: 1.2rem;
+    /* margin-right: 1.2rem; */
     #image {
 
     }
     > div {
-        background-color: black;
-        width: 44px;
-        height: 44px;
-        border-radius: 8px;
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 60px;
+        height: 56px;
+        border-radius: 14px;
         display: flex;
         align-items: center;
         justify-content: center;
         svg {
-            font-size: 1.35rem;
+            font-size: 1.75rem;
         }
     }
     span {
