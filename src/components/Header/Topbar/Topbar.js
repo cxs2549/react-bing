@@ -6,19 +6,21 @@ import { BiMicrophone } from "react-icons/bi";
 const StyledTopbar = styled.div`
   display: flex;
   align-items: center;
-  padding: 0 2.5rem;
+ 
+  padding: 0 1rem;
   position: fixed;
-  top: 0;
+  top: -100%;
   left: 0;
   right: 0;
   height: 60px;
   background-color: var(--navBGC);
   z-index: 10;
-  transition: top 400ms;
-  transition-delay: 400ms;
+  visibility: ${props => (!props.open ? 'visible' : 'hidden')};
+  
   img {
     max-width: 24px;
-    margin-right: .5rem;
+    margin-right: 1rem;
+    
   }
 
   #searchBar {
@@ -55,16 +57,16 @@ const StyledTopbar = styled.div`
  
 `;
 
-const Topbar = () => {
+const Topbar = ({open}) => {
 
   useEffect(() => {
 		let prev = window.pageYOffset
 		const see = () => {
 			var current = window.pageYOffset
 			if (prev > current) {
-				document.getElementById('topbar').style.visibility = 'visible'
+				document.getElementById('topbar').style.top = '0'
 			} else {
-				document.getElementById('topbar').style.visibility = 'hidden'
+				document.getElementById('topbar').style.top = '-100%'
 			}
 			prev = current
 		}
@@ -73,7 +75,7 @@ const Topbar = () => {
 		return () => window.removeEventListener('scroll', see)
 	}, [])
   return (
-    <StyledTopbar id="topbar">
+    <StyledTopbar id="topbar" open={open}>
       <img src={logo} alt="" />
 
       <div id="searchBar">

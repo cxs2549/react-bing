@@ -8,24 +8,18 @@ const StyledHeadline = styled.div`
 display: grid;
 grid-template-columns: 2fr 1fr;
 border-bottom: 1px solid rgb(99, 99, 99);
-max-height: 156px;
-/* background-color: darkgreen; */
+max-height: 166px;
   #text {
-    /* display: none; */
-    /* position: absolute; */
     width: 100%;
     color: white;
     border-radius: 8px;
     position: relative;
     padding: 1rem;
-    /* border: 2px solid white; */
   
     #source {
       margin-bottom: 0.5rem;
       display: flex;
       justify-content: flex-start
-      /* align-content: center; */
-      /* border: 2px solid white; */
       img {
         max-width: 20px;
         max-height: 20px;

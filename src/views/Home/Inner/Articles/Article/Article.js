@@ -3,6 +3,7 @@ import { HiOutlineThumbUp } from 'react-icons/hi'
 import { RiHandHeartLine } from 'react-icons/ri'
 import { BiComment } from 'react-icons/bi'
 import { AiOutlineEllipsis } from 'react-icons/ai'
+import { Link } from "react-router-dom"
 
 const StyledArticle = styled.div`
 	width: 100%;
@@ -112,7 +113,7 @@ const StyledArticle = styled.div`
 const Article = ({ article }) => {
 	return (
 		<StyledArticle image={article.image} split={article.split}>
-			{article.split && <img id="image" src={article.image} alt="" />}
+			{article.split && <Link to="/article/id"><img id="image" src={article.image} alt="" /></Link>}
 			{article.split && (
 				<div id="text">
 					<div id="innerText">

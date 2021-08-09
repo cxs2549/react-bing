@@ -22,8 +22,8 @@ const StyledSearchbar = styled.div`
       font-size: 1.2rem;
       box-shadow: var(--boxShadow);
       display: flex;
-      align-items: center; 
-      gap: .5rem;
+      align-items: center;
+      gap: 0.5rem;
       svg {
         color: orange;
         font-size: 1.5rem;
@@ -34,7 +34,7 @@ const StyledSearchbar = styled.div`
     }
   }
   #searchbar {
-    margin-top: 0.5rem;
+    margin-top: ${props => (!props.noweather ? '0.5rem' : '0')};
     position: relative;
     box-shadow: var(--boxShadow);
     border-radius: 99999px;
@@ -64,41 +64,42 @@ const StyledSearchbar = styled.div`
 `;
 
 const useOnScreen = (ref) => {
+  const [isIntersecting, setIntersecting] = useState(false);
 
-  const [isIntersecting, setIntersecting] = useState(false)
-
-  const observer = new IntersectionObserver(
-    ([entry]) => setIntersecting(entry.isIntersecting)
-  )
+  const observer = new IntersectionObserver(([entry]) =>
+    setIntersecting(entry.isIntersecting)
+  );
 
   useEffect(() => {
-    observer.observe(ref.current)
+    observer.observe(ref.current);
     // Remove the observer as soon as the component is unmounted
-    return () => { observer.disconnect() }
-  })
+    return () => {
+      observer.disconnect();
+    };
+  });
 
-  return isIntersecting
-}
+  return isIntersecting;
+};
 
-
-const Searchbar = () => {
-
-  const ref = useRef()
-  const isVisible = useOnScreen(ref)
+const Searchbar = ({ noweather }) => {
+  const ref = useRef();
+  const isVisible = useOnScreen(ref);
   return (
-    <StyledSearchbar ref={ref}>
-      <div id="weather">
-        <div id="temp">
-        <GiStripedSun />
-          <span>77&deg;F</span>
+    <StyledSearchbar ref={ref} noweather={noweather}>
+      {!noweather && (
+        <div id="weather">
+          <div id="temp">
+            <GiStripedSun />
+            <span>77&deg;F</span>
+          </div>
         </div>
-      </div>
+      )}
       <div id="searchbar">
         <input type="search" placeholder="Search or type URL" />
         <RiPhoneCameraLine />
         <BiMicrophone />
       </div>
-      {!isVisible && <Topbar />}
+      <Topbar open={isVisible} />
     </StyledSearchbar>
   );
 };
