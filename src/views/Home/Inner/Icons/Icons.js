@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 import Icon from './Icon/Icon'
-import { GiTorch, GiSportMedal } from 'react-icons/gi'
-import { AiOutlineShoppingCart, AiOutlineCalculator, AiTwotoneAppstore } from 'react-icons/ai'
+import { GiSportMedal } from 'react-icons/gi'
+import { AiOutlineShoppingCart, AiTwotoneAppstore } from 'react-icons/ai'
 import { FaCloudSun } from 'react-icons/fa'
 import { RiVirusFill } from 'react-icons/ri'
-import { MdWallpaper } from 'react-icons/md'
+
 import { BiShoppingBag } from 'react-icons/bi'
 import { IoMdPhotos } from 'react-icons/io'
 import { BsFillCameraVideoFill } from 'react-icons/bs'
@@ -23,6 +23,7 @@ const StyledIcons = styled.div`
 	overflow-x: scroll;
 	max-width: 100%;
   padding: 0 1rem;
+	margin-bottom: 2rem;
 
 `
 

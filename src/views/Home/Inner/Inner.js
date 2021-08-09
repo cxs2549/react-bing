@@ -2,6 +2,8 @@ import styled from 'styled-components'
 import Articles from './Articles/Articles'
 import Icons from './Icons/Icons'
 import Searchbar from './Searchbar/Searchbar'
+import TopHeadlines from "./TopHeadlines/TopHeadlines"
+import Trending from "./Trending/Trending"
 
 const StyledInner = styled.div`
 	/* overflow-y: scroll; */
@@ -18,6 +20,9 @@ const Inner = () => {
 			<Searchbar />
 			<Icons />
 			<Articles />
+			<TopHeadlines />
+			<Articles bg='black' />
+			<Trending />
 		</StyledInner>
 	)
 }

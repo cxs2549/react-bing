@@ -8,14 +8,10 @@ const StyledSearchbar = styled.div`
   color: white;
   padding: 0 1rem;
   #weather {
-    padding-left: 0.75rem;
+    padding-left: 1.25rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    svg {
-      color: orange;
-      font-size: 1.5rem;
-    }
     #temp {
       background-color: #cdcdcd50;
       font-weight: 500;
@@ -28,6 +24,13 @@ const StyledSearchbar = styled.div`
       display: flex;
       align-items: center; 
       gap: .5rem;
+      svg {
+        color: orange;
+        font-size: 1.5rem;
+      }
+      span {
+        text-shadow: var(--textShadow);
+      }
     }
   }
   #searchbar {

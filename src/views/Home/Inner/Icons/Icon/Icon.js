@@ -24,7 +24,7 @@ const StyledIcon = styled.div`
         }
     }
     span {
-        text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+        text-shadow: var(--textShadow);
         white-space: nowrap;
         font-weight: 500;
     }

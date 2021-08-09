@@ -35,12 +35,13 @@ const StyledArticle = styled.div`
 		position: relative;
 		/* border: 2px solid white; */
 		#innerText {
-			background-image: linear-gradient(to bottom, transparent 0%, #1b181a 34%);
+			background-image: linear-gradient(to top, #282828f3 85%, transparent 99%);
 			/* border: 2px solid white; */
 			padding: 1rem;
-			padding-right: .5rem;
+			/* padding-right: .8rem; */
 			/* padding-top: 0; */
 			position: absolute;
+		
 			left: 0;
 			bottom: 0;
 			width: 100%;

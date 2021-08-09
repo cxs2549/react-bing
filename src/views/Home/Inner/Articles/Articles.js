@@ -1,32 +1,25 @@
 import styled from 'styled-components'
 import Article from './Article/Article'
-import article1 from '../../../../assets/articles/article-1.jpg'
+
 import article2 from '../../../../assets/articles/article-2.jpg'
 import article3 from '../../../../assets/articles/article-3.jpg'
 import article4 from '../../../../assets/articles/article-4.png'
 import bi from '../../../../assets/articles/bi.png'
 
 const StyledArticles = styled.div`
-	margin-top: 1.5rem;
 	/* height: 800px; */
-	padding: 0 1rem;
+	padding: 1rem;
   display: flex;
   flex-flow: column;
-  margin-bottom: 5rem;
+	background-color: ${props => (props.bg || 'transparent')};
+	>div:last-of-type {
+		margin-bottom: 0;
+	}
 `
 
-const Articles = () => {
+const Articles = ({bg}) => {
 	const articles = [
-		{
-			image: article1,
-			split: true,
-			title: 'Simone Biles Reunites with Boyfriend Jonathan Owens in Texas as She Supports Him at NF...',
-			source: 'People',
-			sourceIcon: bi,
-			publishedAt: '8 hours',
-			likes: 366,
-			comments: 55
-		},
+	
 		{
 			image: article2,
 			split: true,
@@ -59,7 +52,7 @@ const Articles = () => {
 		},
 	]
 	return (
-		<StyledArticles>
+		<StyledArticles bg={bg}>
 			{articles.map((article, i) => (
 				<Article article={article} key={i} />
 			))}

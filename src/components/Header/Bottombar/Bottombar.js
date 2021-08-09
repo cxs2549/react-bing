@@ -7,28 +7,30 @@ const StyledBottombar = styled.div`
 	bottom: 0;
 	left: 0;
 	right: 0;
-	height: 60px;
+	height: 69px;
 	background-color: var(--navBGC);
 	color: white;
+	transition: visibility 200ms;
+	transition-delay: 200ms;
 `
 
 const Bottombar = () => {
   
-  useEffect(() => {
-    const prev = window.scrollY
+	useEffect(() => {
+		let prev = window.pageYOffset
 		const see = () => {
-			var current = window.scrollY
-			if (current > prev) {
-				document.getElementById('bottombar').style.visibility = 'hidden'
-        console.log( current, prev)
-			} else if (current < prev) {
-        console.log( current, prev)
+			var current = window.pageYOffset
+			if (prev > current || window.pageYOffset < 50) {
 				document.getElementById('bottombar').style.visibility = 'visible'
+			} else {
+				document.getElementById('bottombar').style.visibility = 'hidden'
 			}
+			prev = current
 		}
 
 		window.addEventListener('scroll', see)
-	})
+		return () => window.removeEventListener('scroll', see)
+	}, [])
 	return (
 		<StyledBottombar id="bottombar">
 			<Icons />

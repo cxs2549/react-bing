@@ -18,9 +18,10 @@ body {
 }
 
 :root {
-  --navBGC: rgba(0,0,0,.85);
+  --navBGC: rgba(0,0,0,.9);
   --svgSize: 1.55rem;
 	--boxShadow: 0px 2px 8px rgba(0,0,0,0.2);
+	--textShadow: 0px 0px 3px rgba(0,0,0,0.5);
 }
 
 `;
