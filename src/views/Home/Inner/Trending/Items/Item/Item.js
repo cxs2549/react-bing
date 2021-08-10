@@ -78,11 +78,11 @@ const Item = ({ item }) => {
       <div id="image"></div>
       <div id="text">
         <div id="source">
-          <span>{item.source}</span>
+          <span>{item.network}</span>
           <span>{item.publishedAt}</span>
         </div>
         <div id="title">
-          <h1>{item.title}</h1>
+          <h1>{item.headline}</h1>
         </div>
         <div id="icons">
           <div id="trio">

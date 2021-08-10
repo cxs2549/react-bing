@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import bi from '../../../assets/articles/bi.png'
 
 const StyledSource = styled.div`
   padding: .75rem 1rem;
@@ -19,11 +18,11 @@ const StyledSource = styled.div`
   }
 `
 
-const Source = () => {
+const Source = ({article}) => {
   return (
     <StyledSource>
-      <img src={bi} alt="" />
-      <span>Business Insider</span>
+      <img src={article.source.image} alt="" />
+      <span>{article.source.network}</span>
     </StyledSource>
   )
 }

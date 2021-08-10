@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Headline from "./Headline/Headline";
-import cap from "../../../../../assets/headlines/capital.jpg";
-import fire from "../../../../../assets/headlines/fire.jpg";
+import {articles as master} from '../../../../../data/articles'
 
 const StyledHeadlines = styled.div`
   /* border: 2px solid white; */
@@ -14,56 +13,7 @@ const StyledHeadlines = styled.div`
 `;
 
 const Headlines = () => {
-  const headlines = [
-    {
-      title: "Senate advances bipartisan infrastructure bill in key test vote",
-      source: "ABC News",
-      publishedAt: "8 hours",
-      likes: 519,
-      comments: 157,
-      image: cap,
-    },
-    {
-      title: "Five missing as Dixie Fire ravages California towns",
-      source: "The Hill",
-      publishedAt: "58 mins",
-      likes: 64,
-      comments: 2,
-      image: fire,
-    },
-    {
-      title: "Five missing as Dixie Fire ravages California towns",
-      source: "The Hill",
-      publishedAt: "58 mins",
-      likes: 64,
-      comments: 2,
-      image: fire,
-    },
-    {
-      title: "Five missing as Dixie Fire ravages California towns",
-      source: "The Hill",
-      publishedAt: "58 mins",
-      likes: 64,
-      comments: 2,
-      image: fire,
-    },
-    {
-      title: "Five missing as Dixie Fire ravages California towns",
-      source: "The Hill",
-      publishedAt: "58 mins",
-      likes: 64,
-      comments: 2,
-      image: fire,
-    },
-    {
-      title: "Five missing as Dixie Fire ravages California towns",
-      source: "The Hill",
-      publishedAt: "58 mins",
-      likes: 64,
-      comments: 2,
-      image: fire,
-    },
-  ];
+  const headlines = master.slice(3, 5)
   return (
     <StyledHeadlines>
       {headlines.map((headline, i) => (

@@ -6,7 +6,6 @@ import { BiMicrophone } from "react-icons/bi";
 const StyledTopbar = styled.div`
   display: flex;
   align-items: center;
- 
   padding: 0 1rem;
   position: fixed;
   top: -100%;

@@ -102,10 +102,10 @@ const Headline = ({headline}) => {
         <div id="innerText">
           <div id="source">
             <img alt="" />
-            <span>{headline.source}</span>
+            <span>{headline.network}</span>
             <span>{headline.publishedAt}</span>
           </div>
-          <h1>{headline.title}</h1>
+          <h1>{headline.headline}</h1>
           <div id="icons">
             <div id="trio">
               <div id="like">

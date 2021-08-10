@@ -3,7 +3,7 @@ import { FaRegNewspaper } from "react-icons/fa";
 import { IoIosArrowBack } from "react-icons/io";
 import { RiHome5Line } from "react-icons/ri";
 import { AiOutlineUser, AiOutlineAppstoreAdd } from "react-icons/ai";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const StyledIcons = styled.div`
   height: 100%;
@@ -41,13 +41,17 @@ const Icons = () => {
       <nav>
         <ul>
           <li>
-            <IoIosArrowBack />
+            <Link to="/">
+              <IoIosArrowBack />
+            </Link>
           </li>
           <li>
-            <FaRegNewspaper />
+            <NavLink to="/article/id">
+              <FaRegNewspaper />
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/">
+            <NavLink to="/" end>
               <RiHome5Line />
             </NavLink>
           </li>

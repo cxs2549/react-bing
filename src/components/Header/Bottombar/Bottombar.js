@@ -10,7 +10,6 @@ const StyledBottombar = styled.div`
 	height: 69px;
 	background-color: var(--navBGC);
 	color: white;
-	transition: visibility 400ms;
 `
 
 const Bottombar = () => {
