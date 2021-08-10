@@ -15,8 +15,8 @@ const StyledInner = styled.div`
 `
 
 const Inner = () => {
-	const articles1 = master.slice(0, 3)
-	const articles2 = master.slice(4, 7)
+	const articles1 = master.slice(0, 8)
+	const articles2 = master.slice(0, 8)
 	return (
 		<StyledInner id="inner">
 			<Searchbar />

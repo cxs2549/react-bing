@@ -9,6 +9,9 @@ display: grid;
 grid-template-columns: 2fr 1fr;
 border-bottom: 1px solid rgb(99, 99, 99);
 max-height: 166px;
+@media (min-width: 768px) {
+  border-bottom: none;
+}
   #text {
     width: 100%;
     color: white;
@@ -28,10 +31,10 @@ max-height: 166px;
       }
       span {
         font-size: 80%;
-        margin-right: 0.5rem;
+        margin-right: 0.25rem;
         &:first-of-type::after {
           content: "•";
-          padding-left: 0.5rem;
+          padding-left: 0.25rem;
           opacity: 0.7;
         }
       }
@@ -80,6 +83,7 @@ max-height: 166px;
     img {
       max-width: 100%;
       min-height: 60%;
+      max-height: 60%;
       object-fit: cover;
       border-radius: 8px;
       flex-grow: 1;

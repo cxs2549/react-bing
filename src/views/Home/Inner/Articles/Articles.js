@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Article from "./Article/Article";
-import {articles as master} from '../../../../data/articles'
+
 
 const StyledArticles = styled.div`
   padding: 1rem;
@@ -10,6 +10,18 @@ const StyledArticles = styled.div`
   > div:last-of-type {
     margin-bottom: 0;
   }
+  @media (min-width: 640px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (min-width: 1280px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+ 
 `;
 
 const Articles = ({ bg, articles }) => {

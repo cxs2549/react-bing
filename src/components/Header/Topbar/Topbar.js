@@ -15,7 +15,8 @@ const StyledTopbar = styled.div`
   background-color: var(--navBGC);
   z-index: 10;
   visibility: ${props => (!props.open ? 'visible' : 'hidden')};
-  
+  transition: top 500ms;
+  z-index: 99;
   img {
     max-width: 24px;
     margin-right: 1rem;
@@ -62,7 +63,7 @@ const Topbar = ({open}) => {
 		let prev = window.pageYOffset
 		const see = () => {
 			var current = window.pageYOffset
-			if (prev > current) {
+			if (prev > current && current > 101) {
 				document.getElementById('topbar').style.top = '0'
 			} else {
 				document.getElementById('topbar').style.top = '-100%'

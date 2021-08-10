@@ -28,10 +28,10 @@ const StyledItem = styled.div`
     #source {
       span {
         font-size: 80%;
-        margin-right: 0.5rem;
+        margin-right: 0.25rem;
         &:first-of-type::after {
           content: "•";
-          padding-left: 0.5rem;
+          padding-left: 0.25rem;
           opacity: 0.7;
         }
       }

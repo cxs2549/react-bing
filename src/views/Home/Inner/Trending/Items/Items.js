@@ -7,7 +7,6 @@ const StyledItems = styled.div`
   display: flex;
   overflow-x: scroll;
   padding: 0 0.75rem;
-  padding-bottom: 2rem;
 `;
 
 const Items = () => {
