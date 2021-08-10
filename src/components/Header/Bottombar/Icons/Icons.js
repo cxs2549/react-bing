@@ -46,7 +46,7 @@ const Icons = () => {
             </Link>
           </li>
           <li>
-            <NavLink to="/article/id">
+            <NavLink to="/articles/id">
               <FaRegNewspaper />
             </NavLink>
           </li>

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Item from "./Item/Item";
 import {articles as master} from '../../../../../data/articles'
+import Article from "../../Articles/Article/Article";
 
 
 const StyledItems = styled.div`
@@ -14,7 +15,8 @@ const Items = () => {
   return (
     <StyledItems>
       {items.map((item, i) => (
-        <Item key={i} item={item} />
+        // 
+        <Article article={item} key={i} transparent />
       ))}
     </StyledItems>
   );

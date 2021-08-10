@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 
 const StyledArticle = styled.div`
   width: 100%;
+  min-width: 260px;
   border-radius: 8px;
   overflow: hidden;
   margin-bottom: 1rem;
@@ -14,29 +15,40 @@ const StyledArticle = styled.div`
   display: flex;
   flex-flow: column;
   justify-content: space-between;
-  background-color: ${props => (props.color || '#333')};
+  background-color: ${(props) => (props.transparent ? "none" : props.color)};
+  background-image: linear-gradient(
+    to bottom,
+    ${(props) => props.color} ${(props) => (props.transparent ? "60%" : "100%")},
+    transparent
+  );
   overflow: hidden;
+  margin-right: 1rem;
+  box-shadow: var(--boxShadow);
   @media (min-width: 640px) {
     margin-bottom: 0;
   }
   #image {
-
     border-radius: 8px;
     flex-grow: 1;
     position: relative;
     z-index: 1;
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       bottom: 0;
       left: 0;
       height: 5rem;
       right: 0;
-      background-image: linear-gradient(to bottom, transparent, ${props => (props.color || '#333')});
+      background-image: linear-gradient(
+        to top,
+        ${(props) => props.color},
+        transparent
+      );
     }
     img {
       width: 100%;
       height: 100%;
+      min-height: 100%;
       border-radius: 8px;
       object-fit: cover;
       object-position: center center;
@@ -46,26 +58,16 @@ const StyledArticle = styled.div`
   }
   #textContainer {
     position: relative;
-    
   }
   #text {
     width: 100%;
-    color: ${props => (props.text || 'white')};
+    color: ${(props) => props.text || "white"};
     position: relative;
-    bottom: 0;
-    left: 0;
+   
     padding: 1rem;
     margin-top: -2.5rem;
     z-index: 10;
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 0;
-    }
+    
     #source {
       margin-bottom: 0.75rem;
       display: flex;
@@ -89,7 +91,8 @@ const StyledArticle = styled.div`
       }
     }
     h1 {
-      font-size: 115%;
+      font-size: ${(props) => (props.transparent ? "100%" : "115%")};
+      height: ${(props) => (props.transparent ? "66px" : "auto")};
       position: relative;
       z-index: 2;
       @media (min-width: 1024px) {
@@ -103,6 +106,7 @@ const StyledArticle = styled.div`
       justify-content: space-between;
       position: relative;
       z-index: 2;
+      height: 40px;
       #trio {
         display: flex;
         align-items: center;
@@ -123,7 +127,7 @@ const StyledArticle = styled.div`
           margin-right: 0.5rem;
           display: flex;
           align-items: center;
-          background-color: ${props => (props.color)};
+          background-color: ${(props) => props.color};
           filter: brightness(155%);
           border-radius: 99999px;
         }
@@ -133,15 +137,21 @@ const StyledArticle = styled.div`
         display: flex;
         align-items: center;
         background-color: rgba(58, 58, 58, 0.7);
+        background-color: ${(props) => props.color};
+        filter: brightness(155%);
         border-radius: 99999px;
       }
     }
   }
 `;
 
-const Article = ({ article }) => {
+const Article = ({ article, transparent }) => {
   return (
-    <StyledArticle color={article.color} text={article.text}>
+    <StyledArticle
+      color={article.color}
+      text={article.text}
+      transparent={transparent}
+    >
       <Link id="image" to="/articles/id">
         <img src={article.image} alt="" />
       </Link>

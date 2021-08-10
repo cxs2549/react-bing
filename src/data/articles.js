@@ -58,13 +58,13 @@ export const articles = [
   },
   {
     id: 4,
-    headline: "Five missing as Dixie Fire ravages California towns",
+    headline: "Dixie Fire has destroyed nearly 900 buildings; hot weather expected",
     image: article5,
     network: "The Hill",
     sourceImage: bi,
     publishedAt: "58 mins",
-    likes: 64,
-    comments: 2,
+    likes: 67,
+    comments: 3,
     color: "#6B290E"
   },
   {

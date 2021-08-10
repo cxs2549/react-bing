@@ -5,28 +5,39 @@ import { BiComment } from "react-icons/bi";
 import { AiOutlineEllipsis } from "react-icons/ai";
 
 const StyledHeadline = styled.div`
-display: grid;
-grid-template-columns: 2fr 1fr;
-border-bottom: 1px solid rgb(99, 99, 99);
-max-height: 166px;
-@media (min-width: 768px) {
-  border-bottom: none;
-}
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  border-bottom: 1px solid rgb(99, 99, 99);
+  max-height: min-content;
+  gap: 1rem;
+  @media (min-width: 768px) {
+    border-bottom: none;
+  }
   #text {
     width: 100%;
     color: white;
     border-radius: 8px;
     position: relative;
+    padding: 0;
+    display: flex;
+    flex-flow: column;
+    min-height: 140px;
     padding: 1rem;
-  
+    padding-right: 0;
+    justify-content: space-between;
     #source {
       margin-bottom: 0.5rem;
       display: flex;
-      justify-content: flex-start
-      img {
+      justify-content: flex-start img {
         max-width: 20px;
         max-height: 20px;
         margin-right: 0.5rem;
+        border-radius: 3px;
+      }
+      img {
+        max-width: 16px;
+        max-height: 16px;
+        margin-right: 0.45rem;
         border-radius: 3px;
       }
       span {
@@ -40,11 +51,13 @@ max-height: 166px;
       }
     }
     h1 {
-      font-size: 100%;
-      height: 56px;
+      font-size: 105%;
+      min-height: 4rem;
+      max-height: 4rem;
+      overflow: hidden;
+      /* height: 56px; */
     }
     #icons {
-      margin-top: 0.75rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -53,7 +66,7 @@ max-height: 166px;
         align-items: center;
         > div {
           margin-right: 0.5rem;
-          padding: 6px 2px;
+          padding: 0 2px;
         }
         svg {
           font-size: 1.2rem;
@@ -63,11 +76,11 @@ max-height: 166px;
           font-size: 80%;
         }
         #like {
-          padding: 6px 12px;
+          padding: 0 4px;
           margin-right: 0.5rem;
           display: flex;
           align-items: center;
-          background-color: rgba(0, 0, 0, 0.7);
+
           border-radius: 99999px;
         }
       }
@@ -79,15 +92,16 @@ max-height: 166px;
     padding-bottom: 1rem;
     display: flex;
     flex-flow: column;
+    justify-content: space-between;
 
     img {
       max-width: 100%;
-      min-height: 60%;
-      max-height: 60%;
+
+      max-height: 72%;
       object-fit: cover;
       border-radius: 8px;
       flex-grow: 1;
-      margin-bottom: .25rem;
+      margin-bottom: 0.25rem;
     }
     #ellipsis {
       padding: 6px 6px;
@@ -99,13 +113,13 @@ max-height: 166px;
   }
 `;
 
-const Headline = ({headline}) => {
+const Headline = ({ headline }) => {
   return (
     <StyledHeadline>
       <div id="text">
         <div id="innerText">
           <div id="source">
-            <img alt="" />
+            {headline.sourceImage && <img src={headline.sourceImage} alt="" />}
             <span>{headline.network}</span>
             <span>{headline.publishedAt}</span>
           </div>
@@ -120,11 +134,12 @@ const Headline = ({headline}) => {
                 <RiHandHeartLine />
                 <span>{headline.likes}</span>
               </div>
-
-              <div>
-                <BiComment />
-                <span>{headline.comments}</span>
-              </div>
+              {headline.comments && (
+                <div>
+                  <BiComment />
+                  <span>{headline.comments}</span>
+                </div>
+              )}
             </div>
           </div>
         </div>

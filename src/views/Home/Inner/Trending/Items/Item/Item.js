@@ -9,17 +9,21 @@ const StyledItem = styled.div`
   min-width: 260px;
   width: 65%;
   background-color: #00000059;
- 
+
   border-radius: 8px;
-  margin-right: .75rem;
+  margin-right: 0.75rem;
   display: grid;
   grid-template-rows: repeat(2, 50%);
   #image {
-    background-image: url(${(props) => props.image});
-    background-size: cover;
-    background-position: center top;
+    
+   img {
+     max-width: 100%;
+     min-height: 50%;
+     object-fit: cover;
+   }
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
+    height: 40vh;
   }
   #text {
     padding: 1rem;
@@ -74,8 +78,10 @@ const StyledItem = styled.div`
 
 const Item = ({ item }) => {
   return (
-    <StyledItem image={item.image} id="item">
-      <div id="image"></div>
+    <StyledItem  id="item">
+      <div id="image">
+        <img src={item.image} alt="" />
+      </div>
       <div id="text">
         <div id="source">
           <span>{item.network}</span>
