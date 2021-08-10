@@ -14,7 +14,7 @@ const Story = () => {
       <div>source/publishedAt</div>
       <div>icons</div>
       <div>
-        <img src="" alt="image" />
+        <img src="" alt="" />
         image <br />
         <span>caption</span> <br />
         <span>2nd caption</span>
