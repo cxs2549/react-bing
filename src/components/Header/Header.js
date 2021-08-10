@@ -6,7 +6,7 @@ const StyledHeader = styled.header`
   height: 60px;
   color: white;
   position: fixed;
-  z-index: 10;
+  z-index: 100;
   
   svg {
     font-size: var(--svgSize);

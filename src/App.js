@@ -4,7 +4,7 @@ import GlobalStyle from "./globalStyles";
 import Article from "./views/Article/Article";
 import Home from "./views/Home/Home";
 
-const routes = [{ path: "/", element: <Home /> }, {path: '/article/:id', element: <Article />}];
+const routes = [{ path: "/", element: <Home /> }, {path: '/articles/:id', element: <Article />}];
 
 
 const App = () => {

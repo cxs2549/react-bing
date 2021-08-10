@@ -10,7 +10,11 @@ const StyledBottombar = styled.div`
 	height: 69px;
 	background-color: var(--navBGC);
 	color: white;
-	transition: visibility 400ms;
+	transition: bottom 500ms;
+	z-index: 99;
+	@media (min-width: 640px) {
+		display: none;
+	}
 `
 
 const Bottombar = () => {
@@ -20,9 +24,9 @@ const Bottombar = () => {
 		const see = () => {
 			var current = window.pageYOffset
 			if (prev > current || window.pageYOffset < 50) {
-				document.getElementById('bottombar').style.visibility = 'visible'
+				document.getElementById('bottombar').style.bottom = 0
 			} else {
-				document.getElementById('bottombar').style.visibility = 'hidden'
+				document.getElementById('bottombar').style.bottom = '-100%'
 			}
 			prev = current
 		}

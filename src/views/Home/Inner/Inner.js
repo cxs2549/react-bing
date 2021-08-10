@@ -4,6 +4,7 @@ import Icons from './Icons/Icons'
 import Searchbar from './Searchbar/Searchbar'
 import TopHeadlines from "./TopHeadlines/TopHeadlines"
 import Trending from "./Trending/Trending"
+import {articles as master} from '../../../data/articles'
 
 const StyledInner = styled.div`
 	/* overflow-y: scroll; */
@@ -14,14 +15,15 @@ const StyledInner = styled.div`
 `
 
 const Inner = () => {
-	
+	const articles1 = master.slice(0, 8)
+	const articles2 = master.slice(0, 8)
 	return (
 		<StyledInner id="inner">
 			<Searchbar />
 			<Icons />
-			<Articles />
+			<Articles articles={articles1} />
 			<TopHeadlines />
-			<Articles bg='black' />
+			<Articles articles={articles2} bg='black' />
 			<Trending />
 		</StyledInner>
 	)

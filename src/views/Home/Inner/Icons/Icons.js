@@ -23,7 +23,7 @@ const StyledIcons = styled.div`
 	overflow-x: scroll;
 	max-width: 100%;
   padding: 0 1rem;
-	margin-bottom: 2rem;
+	margin-bottom: 3.5rem;
 
 `
 
