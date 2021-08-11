@@ -6,6 +6,7 @@ const StyledHeadlines = styled.div`
   overflow: hidden;
   border-radius: 8px;
   background-color: #3434348a;
+  box-shadow: var(--boxShadow);
   > div:last-of-type {
     border-bottom: none;
   }

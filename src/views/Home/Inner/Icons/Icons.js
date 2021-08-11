@@ -22,9 +22,20 @@ const StyledIcons = styled.div`
 	justify-content: center;
 	overflow-x: scroll;
 	max-width: 100%;
-  padding: 0 1rem;
+	padding: 0 1rem;
 	margin-bottom: 3.5rem;
+	@media (min-width: 768px) {
+		display: flex;
+		grid-template-columns: repeat(10, 1fr);
+		justify-content: space-between;
+		max-width: 90%;
+		margin: 8% auto;
+	}
+	@media (min-width: 1280px) {
+		max-width: 60%;
+		margin: 4% auto;
 
+	}
 `
 
 const Icons = () => {

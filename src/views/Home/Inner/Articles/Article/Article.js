@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const StyledArticle = styled.div`
   width: 100%;
-  min-width: 260px;
+  min-width: 284px;
   border-radius: 8px;
   overflow: hidden;
   margin-bottom: 1rem;
@@ -15,16 +15,18 @@ const StyledArticle = styled.div`
   display: flex;
   flex-flow: column;
   justify-content: space-between;
-  background-color: ${(props) => (props.transparent ? "none" : props.color)};
+  background-color: ${(props) => (props.color)};
   background-image: linear-gradient(
     to bottom,
-    ${(props) => props.color} ${(props) => (props.transparent ? "60%" : "100%")},
+    ${(props) => props.color} 100%,
     transparent
-  );
-  overflow: hidden;
-  margin-right: 1rem;
-  box-shadow: var(--boxShadow);
-  @media (min-width: 640px) {
+    );
+    overflow: hidden;
+    /* margin-right: 1rem; */
+    box-shadow: var(--boxShadow);
+    @media (min-width: 640px) {
+      min-width: ${props => (props.minWidth || '260px')};
+    max-width: ${props => (props.minWidth || '260px')};
     margin-bottom: 0;
   }
   #image {
@@ -92,11 +94,12 @@ const StyledArticle = styled.div`
     }
     h1 {
       font-size: ${(props) => (props.transparent ? "100%" : "115%")};
-      height: ${(props) => (props.transparent ? "66px" : "auto")};
+      
+      /* height: auto; */
       position: relative;
       z-index: 2;
       @media (min-width: 1024px) {
-        height: 100px;
+        /* height: 100px; */
       }
     }
     #icons {
@@ -122,12 +125,12 @@ const StyledArticle = styled.div`
           font-size: 80%;
         }
         #like {
-          padding: 6px 12px;
+          padding: 6px ${props => (props.transparent ? '2px' : '12px')};
           padding-bottom: 8px;
           margin-right: 0.5rem;
           display: flex;
           align-items: center;
-          background-color: ${(props) => props.color};
+          background-color: ${(props) => props.transparent ? 'none' : props.color};
           filter: brightness(155%);
           border-radius: 99999px;
         }
@@ -136,8 +139,7 @@ const StyledArticle = styled.div`
         padding: 6px 6px;
         display: flex;
         align-items: center;
-        background-color: rgba(58, 58, 58, 0.7);
-        background-color: ${(props) => props.color};
+        background-color: ${(props) => props.transparent ? 'none' : props.color};
         filter: brightness(155%);
         border-radius: 99999px;
       }
@@ -145,12 +147,13 @@ const StyledArticle = styled.div`
   }
 `;
 
-const Article = ({ article, transparent }) => {
+const Article = ({ article, transparent, minWidth }) => {
   return (
     <StyledArticle
       color={article.color}
       text={article.text}
       transparent={transparent}
+      minWidth={minWidth}
     >
       <Link id="image" to="/articles/id">
         <img src={article.image} alt="" />

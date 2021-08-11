@@ -6,6 +6,7 @@ const StyledTrending = styled.div`
   background-color: gray;
   color: white;
   padding: 1rem 0;
+  padding-bottom: 0;
 
   background-color: #0cbaba;
 background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);

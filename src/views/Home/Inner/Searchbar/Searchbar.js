@@ -7,6 +7,16 @@ import Topbar from "../../../../components/Header/Topbar/Topbar";
 const StyledSearchbar = styled.div`
   color: white;
   padding: 0 1rem;
+  @media (min-width: 768px) {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  @media (min-width: 1024px) {
+    max-width: 68%;
+  }
+  @media (min-width: 1280px) {
+    max-width: 55%;
+  }
   #weather {
     padding-left: 1.25rem;
     display: flex;
